@@ -311,7 +311,7 @@ class Conference720p
     const std::string showMicOnOverlay (int regionId)
     {
         std::stringstream strstr;
-        strstr <<    "region=" << regionId << ",overlay_id=micon_overlay,left=0%,top=0%,hsize=10%,vsize=10%,priority=0.3,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/verification/red_recording_dot.png";
+        strstr <<    "region=" << regionId << ",overlay_id=micon_overlay,left=0%,top=0%,hsize=10%,vsize=10%,priority=0.3,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/restconfdemo/red_recording_dot.png";
 		return strstr.str();
 	}
 
@@ -325,7 +325,7 @@ class Conference720p
     const std::string showMicMuteOverlay (int regionId)
     {
         std::stringstream strstr;
-        strstr <<    "region=" << regionId << ",overlay_id=micmute_overlay,left=0%,top=0%,hsize=15%,vsize=105,priority=0.2,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/verification/mic_disabled.png";
+        strstr <<    "region=" << regionId << ",overlay_id=micmute_overlay,left=0%,top=0%,hsize=15%,vsize=105,priority=0.2,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/restconfdemo/mic_disabled.png";
 		return strstr.str();
 	}
 
@@ -339,7 +339,7 @@ class Conference720p
     const std::string showBagheadOverlay (int regionId)
     {
         std::stringstream strstr;
-        strstr <<    "region=" << regionId << ",overlay_id=baghead_overlay,left=0%,top=0%,hsize=100%,vsize=100%,priority=0.5,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/verification/baghead.png";
+        strstr <<    "region=" << regionId << ",overlay_id=baghead_overlay,left=0%,top=0%,hsize=100%,vsize=100%,priority=0.5,overlay_bgopacity=0%,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/restconfdemo/baghead.png";
 		return strstr.str();
 	}
 
@@ -353,7 +353,7 @@ class Conference720p
     const std::string showStockTickerOverlay (int regionId)
     {
         std::stringstream strstr;
-        strstr <<    "region=" << regionId << ",overlay_id=stocktick,left=20%,top=50%,hsize=60%,vsize=50%,priority=0.5,overlay_bgcolor=CornflowerBlue,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/verification/stock_market.png,img_duration=0;region=" << regionId << ",overlay_id=stocktickText,left=20%,top=95%,hsize=60%,vsize=5%,priority=0.4,overlay_bgcolor=gray,textstyle_id=textStyle2,fontfamily=Arial,fontstyle=normal,fontweight=bold,fonteffects=none,fontsize=100%,fontcolor=firebrick,fontdirection=lr,textstyle_bgcolor=gray,textalignment=center,wrap=nowrap,content_id=body1,content_applymode=replace,scroll_mode=scrollContinuous,direction=rl,padding=0,speed=8,p_id=textstring1,p_style=textStyle2,p_duration=30s,encoding=UTF8,text=Symbol - AMD   Name - Advanced Micro Devices   Stock Exchange - NYSE   Opening Price - 4.1501   Asking Price - N/A   EBITDA - -90.0M  Symbol - BA   Name - Boeing Company   Stock   Days Low - 139.75   52 Week High - 142.80   52 Week Low - 73.00  Earnings per Share - 80.88   Asking Price - N/A   Volume - 454977   Days High - 81.8525  Days Low - 80    Symbol - CAB   Name - Cabela's Inc Clas   Stock Exchange - NYSE   Opening Price - 69.66   Asking Low - 47.65  Earnings per Share - 2.959   EBITDA - 437.3M  Symbol - DOW   Name - Dow 5   Days High - 43.47  Days Low - 43.00   52 Week High - 44.99   52 Week Low - 29.81    Symbol - IBM   Name - Internaltion Business Machines   Opening Price - 1156.85   Asking Price - N/A   Volume - 2766140   Days High - 116   EBITDA - 17.599B";
+        strstr <<    "region=" << regionId << ",overlay_id=stocktick,left=20%,top=50%,hsize=60%,vsize=50%,priority=0.5,overlay_bgcolor=CornflowerBlue,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_bgopacity=0%,content_id=body1,content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/restconfdemo/stock_market.png,img_duration=0;region=" << regionId << ",overlay_id=stocktickText,left=20%,top=95%,hsize=60%,vsize=5%,priority=0.4,overlay_bgcolor=gray,textstyle_id=textStyle2,fontfamily=Arial,fontstyle=normal,fontweight=bold,fonteffects=none,fontsize=100%,fontcolor=firebrick,fontdirection=lr,textstyle_bgcolor=gray,textalignment=center,wrap=nowrap,content_id=body1,content_applymode=replace,scroll_mode=scrollContinuous,direction=rl,padding=0,speed=8,p_id=textstring1,p_style=textStyle2,p_duration=30s,encoding=UTF8,text=Symbol - AMD   Name - Advanced Micro Devices   Stock Exchange - NYSE   Opening Price - 4.1501   Asking Price - N/A   EBITDA - -90.0M  Symbol - BA   Name - Boeing Company   Stock   Days Low - 139.75   52 Week High - 142.80   52 Week Low - 73.00  Earnings per Share - 80.88   Asking Price - N/A   Volume - 454977   Days High - 81.8525  Days Low - 80    Symbol - CAB   Name - Cabela's Inc Clas   Stock Exchange - NYSE   Opening Price - 69.66   Asking Low - 47.65  Earnings per Share - 2.959   EBITDA - 437.3M  Symbol - DOW   Name - Dow 5   Days High - 43.47  Days Low - 43.00   52 Week High - 44.99   52 Week Low - 29.81    Symbol - IBM   Name - Internaltion Business Machines   Opening Price - 1156.85   Asking Price - N/A   Volume - 2766140   Days High - 116   EBITDA - 17.599B";
 		return strstr.str();
 	}
 
@@ -368,7 +368,7 @@ class Conference720p
     const std::string showSlideOverlay (int regionId,int  slideId)
     {
         std::stringstream strstr;
-        strstr <<    "region=" << regionId << ",overlay_id=slideshow_overlay,left=0%,top=0%,hsize=66.6%,vsize=66.6%,priority=0.4,hbwidth=2%,vbwidth=2%,bcolor=firebrick,overlay_duration=lifeOfContent,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_applymode=resizeToFit,imgsize=98%,img_duration=5s,content_id=slide" << slideId << ",content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/verification/slide" << slideId << ".png";
+        strstr <<    "region=" << regionId << ",overlay_id=slideshow_overlay,left=0%,top=0%,hsize=66.6%,vsize=66.6%,priority=0.4,hbwidth=2%,vbwidth=2%,bcolor=firebrick,overlay_duration=lifeOfContent,imgstyle_id=imgStyle1,imgalignment=center,imgstyle_applymode=resizeToFit,imgsize=98%,img_duration=5s,content_id=slide" << slideId << ",content_applymode=replace,img_id=image1,img_style=imgStyle1,img_type=png,img_uri=file:///var/lib/xms/media/en-US/restconfdemo/slide" << slideId << ".png";
 		return strstr.str();
 	}
 

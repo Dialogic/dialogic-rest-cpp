@@ -47,11 +47,10 @@ static const char *APP_VERSION = PACKAGE_VERSION;
 static const char *APP_VERSION = __DATE__ " " __TIME__;
 #endif
 
-static const char *APP_NAME = "verification";
-//static const char *APP_DESCRIPTION = "PowerMedia XMS - AppFramework / Demonstration Application";
+static const char *APP_NAME = "restconfdemo";
 static const char *APP_DESCRIPTION = "PowerMedia XMS - REST Conferencing C++ Demo Application";
 
-static const char *PID_FILE = "/var/run/verification.pid";
+static const char *PID_FILE = "/var/run/restconfdemo.pid";
 
 // Event queue and locks
 std::queue<std::string> eventQueue;

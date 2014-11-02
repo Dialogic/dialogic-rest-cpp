@@ -859,11 +859,11 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 std::string showMicOn = showMicOnOverlay (0);
                 update_conference (conf_id_, NULL, NULL, showMicOn.c_str ());
                 std::string media_id = record_conference (conf_id_,
-                                                          "file://verification/conf_recording.wav",
+                                                          "file://restconfdemo/conf_recording.wav",
                                                           "audio/x-wav",
                                                           "L16",
                                                           "16000",
-                                                          "file://verification/conf_recording.vid",
+                                                          "file://restconfdemo/conf_recording.vid",
                                                           "video/x-vid", "h264", "3.1", "720", "1280", "1536000", "30", "60s");
                 if (!media_id.empty ())
                 {
@@ -891,8 +891,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             if (strlen (getExclusiveMediaOp ()) == 0)
             {
                 if (file_exists
-                    ("/var/lib/xms/media/en-US/verification/conf_recording.wav")
-                    && file_exists ("/var/lib/xms/media/en-US/verification/conf_recording.vid"))
+                    ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.wav")
+                    && file_exists ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.vid"))
                 {
                     LOGDEBUG ("Playing conference recording into next open region\n");
                     int region = get_next_open_region ();
@@ -903,9 +903,9 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "conf_recording.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
+                                                           "file://restconfdemo",
                                                            "conf_recording.vid",
-                                                           "video/x-vid", "file://verification", region_string, "0");
+                                                           "video/x-vid", "file://restconfdemo", region_string, "0");
                     ConfVideoPlay recordingPlay (conf_id_, media_id.c_str (), region);
                     ConfVideoPlays::Instance ()->addNewPlay (recordingPlay);
                     ConfVideoPlays::Instance ()->printConfVideoPlayList ();
@@ -923,8 +923,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         else if (digit == "3")
         {
             if (file_exists
-                ("/var/lib/xms/media/en-US/verification/conf_recording.wav")
-                && file_exists ("/var/lib/xms/media/en-US/verification/conf_recording.vid"))
+                ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.wav")
+                && file_exists ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.vid"))
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
@@ -932,8 +932,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "conf_recording.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
-                                                           "conf_recording.vid", "video/x-vid", "file://verification", "0", "0");
+                                                           "file://restconfdemo",
+                                                           "conf_recording.vid", "video/x-vid", "file://restconfdemo", "0", "0");
                     setExclusiveMediaOp (media_id.c_str ());
                     if (areCaptionsOn ())
                     {
@@ -954,8 +954,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         else if (digit == "4")
         {
             if (file_exists
-                ("/var/lib/xms/media/en-US/verification/Dialogic_NetworkFuel.wav")
-                && file_exists ("/var/lib/xms/media/en-US/verification/Dialogic_NetworkFuel.vid"))
+                ("/var/lib/xms/media/en-US/restconfdemo/Dialogic_NetworkFuel.wav")
+                && file_exists ("/var/lib/xms/media/en-US/restconfdemo/Dialogic_NetworkFuel.vid"))
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
@@ -967,9 +967,9 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "Dialogic_NetworkFuel.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
+                                                           "file://restconfdemo",
                                                            "Dialogic_NetworkFuel.vid", "video/x-vid",
-                                                           "file://verification", region_string, "infinite");
+                                                           "file://restconfdemo", region_string, "infinite");
                     ConfVideoPlay recordingPlay (conf_id_, media_id.c_str (), region);
                     ConfVideoPlays::Instance ()->addNewPlay (recordingPlay);
                     ConfVideoPlays::Instance ()->printConfVideoPlayList ();
@@ -992,8 +992,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         else if (digit == "5")
         {
             if (file_exists
-                ("/var/lib/xms/media/en-US/verification/sintel_short_clip.wav")
-                && file_exists ("/var/lib/xms/media/en-US/verification/sintel_short_clip.vid"))
+                ("/var/lib/xms/media/en-US/restconfdemo/sintel_short_clip.wav")
+                && file_exists ("/var/lib/xms/media/en-US/restconfdemo/sintel_short_clip.vid"))
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
@@ -1005,9 +1005,9 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "sintel_short_clip.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
+                                                           "file://restconfdemo",
                                                            "sintel_short_clip.vid",
-                                                           "video/x-vid", "file://verification", region_string, "infinite");
+                                                           "video/x-vid", "file://restconfdemo", region_string, "infinite");
                     ConfVideoPlay sintelPlay (conf_id_, media_id.c_str (), region);
                     ConfVideoPlays::Instance ()->addNewPlay (sintelPlay);
                     ConfVideoPlays::Instance ()->printConfVideoPlayList ();
@@ -1030,8 +1030,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         else if (digit == "6")
         {
             if (file_exists
-                ("/var/lib/xms/media/en-US/verification/Dialogic_NetworkFuel.wav")
-                && file_exists ("/var/lib/xms/media/en-US/verification/Dialogic_NetworkFuel.vid"))
+                ("/var/lib/xms/media/en-US/restconfdemo/Dialogic_NetworkFuel.wav")
+                && file_exists ("/var/lib/xms/media/en-US/restconfdemo/Dialogic_NetworkFuel.vid"))
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
@@ -1041,9 +1041,9 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "Dialogic_NetworkFuel.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
+                                                           "file://restconfdemo",
                                                            "Dialogic_NetworkFuel.vid",
-                                                           "video/x-vid", "file://verification", "0", "infinite");
+                                                           "video/x-vid", "file://restconfdemo", "0", "infinite");
                     setExclusiveMediaOp (media_id.c_str ());
                 }
                 else
@@ -1059,8 +1059,8 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         else if (digit == "7")
         {
             if (file_exists
-                ("/var/lib/xms/media/en-US/verification/sintel_short_clip.wav")
-                && file_exists ("/var/lib/xms/media/en-US/verification/sintel_short_clip.vid"))
+                ("/var/lib/xms/media/en-US/restconfdemo/sintel_short_clip.wav")
+                && file_exists ("/var/lib/xms/media/en-US/restconfdemo/sintel_short_clip.vid"))
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
@@ -1068,9 +1068,9 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     std::string media_id = play_into_conf (conf_id_,
                                                            "sintel_short_clip.wav",
                                                            "audio/x-wav",
-                                                           "file://verification",
+                                                           "file://restconfdemo",
                                                            "sintel_short_clip.vid",
-                                                           "video/x-vid", "file://verification", "0", "infinite");
+                                                           "video/x-vid", "file://restconfdemo", "0", "infinite");
                     setExclusiveMediaOp (media_id.c_str ());
                 }
                 else
