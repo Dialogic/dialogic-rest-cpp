@@ -1,0 +1,12 @@
+AC_PREREQ(2.53)
+AC_INIT([restconfdemo], [1.0])
+AM_INIT_AUTOMAKE([restconfdemo], [1.0])
+AC_PROG_CC
+AC_PROG_CXX
+AC_PROG_RANLIB
+AM_PROG_CC_C_O
+
+AC_DEFINE(APP_RUNDIR, "/usr/bin")
+AC_DEFINE(APP_LOCKDIR, "/var/run")
+
+AC_OUTPUT(Makefile)
