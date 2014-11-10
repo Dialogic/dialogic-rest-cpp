@@ -34,28 +34,18 @@ The minimum XMS system version is 2.3. Older versions will not work.
 
 Autoconf and automake are needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:
  
- aclocal
- autoconf
- automake --add-missing
- ./configure
- make
- make install
+> aclocal
+> autoconf
+> automake --add-missing
+> ./configure
+> make
+> make install
 
-In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo.
-
-TBD
+In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo. These are found in restconfdemo-media.tgz. Install them as follows:
+> cd /var
+> tar xvfz <file-location>/restconfdemo.tgz
 
 * XMS Licensing – the 4 port verification license is adequate for up to 4 conferees, while the demo limits the number of 720p callers to 6. A 10 port license (or larger) license amy be installed if the system can handle it.  The license must include HD video.
-
-Untar the additional files:
-
-* TBD
-
-
-Install them:
-
-* > ./install_mwcdemo_overlays.sh
-* Restart XMS services using Services screen in GUI
 
 ##Starting the Demo#
 
@@ -74,7 +64,7 @@ Install them:
     -a, --ip-address XMS server IP address
     -p, --port  XMS server REST messaging port
 
-* HTTP URL for the demo is http://<xms_ip_addr>/rtcwem/mwcdemo.html  
+* HTTP URL for the demo is http://<xms_ip_addr>/rtcweb/restconfdemo.html  
 * One user must log in as “controller”. The short form – “c” or “ctrlr” can aslo be used. Only the controller will have all conference functions available.  All other logins should just be a unique user ID and will only allow the caller to be put into the conference.  Designate only one caller as the controller.
 * Allow camera and microphone use
 * Using a browser from a PC should result in 720p being chosen from the system’s camera. (check small print in Status area. From a mobile device, VGA should be chosen. You may manually change requested resolution with the 720p/VGA button next to the Call button. If you change resolutions, you will have to Allow camera use again
