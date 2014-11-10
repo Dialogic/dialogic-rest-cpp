@@ -32,18 +32,17 @@ The demo also uses XMS's Javascript API for the web client.
 
 The minimum XMS system version is 2.3. Older versions will not work.
 
-Autoconf and automake are needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:
- 
-> aclocal
-> autoconf
-> automake --add-missing
-> ./configure
-> make
-> make install
+Autoconf and automake are needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:  
+    > aclocal
+    > autoconf
+    > automake --add-missing
+    > ./configure
+    > make
+    > make install
 
 In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo. These are found in restconfdemo-media.tgz. Install them as follows:
-> cd /var
-> tar xvfz <file-location>/restconfdemo.tgz
+    > cd /var
+    > tar xvfz <file-location>/restconfdemo.tgz
 
 * XMS Licensing – the 4 port verification license is adequate for up to 4 conferees, while the demo limits the number of 720p callers to 6. A 10 port license (or larger) license amy be installed if the system can handle it.  The license must include HD video.
 
