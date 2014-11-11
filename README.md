@@ -52,6 +52,8 @@ In addition to the C++ source code, there are a set of media, html and javascrip
     > tar xvfz <file-location>/restconfdemo.tgz
 
 * XMS Licensing – the 4 port verification license is adequate for up to 4 conferees, while the demo limits the number of 720p callers to 6. A 10 port license (or larger) license amy be installed if the system can handle it.  The license must include HD video.
+* REST Application Registration -the application needs to be registered in the XMS Routing scrren before it will be available. Using the XMS Admin GUI, got to the Routing screen. Add the Pattern ^(sip|rtc):conf_demo_720p.* for Application app. The new entry will be at the bottom of the list. Select it and drag it up to a spot between the last MSML and first verification apps. Apply the change.
+
 
 ##Starting the Demo#
 
