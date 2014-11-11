@@ -47,6 +47,7 @@ Autoconf and automake should be installed, as they needed to generate the makefi
         > make install
 
 In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo. These are found in restconfdemo-media.tgz. Install them as follows:
+
     > cd /var
     > tar xvfz <file-location>/restconfdemo.tgz
 
