@@ -30,7 +30,7 @@ The demo also uses XMS's Javascript API for the web client.
 
 ## Installing and Building the Demo ##
 
-The minimum XMS system version is 2.3. Older versions will not work.
+The minimum XMS system version is 2.3, SU 1. This should be available Novermber 15, 2014. Older versions will not work.
 
 Two additional libraries must be installed and ready for use before building the demo:
 
