@@ -34,10 +34,11 @@ The minimum XMS system version is 2.3. Older versions will not work.
 
 Two additional libraries must be installed and ready for use before building the demo:
 
-* Xercess-C++ 3.1.1 Follow the installation/Build Instructions at http://xerces.apache.org/xerces-c/ 
-* cURL 7.39.0 Follow the instructions at http://curl.haxx.se/download.html 
+* Xercess-C++ 3.1.1 Follow the Installation/Build Instructions at http://xerces.apache.org/xerces-c/ Depending on you platform, there are different ways to install Xerces-C++, so no further instructions will be given here.
+* cURL 7.39.0 Follow the instructions at http://curl.haxx.se/download.html A with Xerces, no further build install instructions will ge given here.
 
-Autoconf and automake are also needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:  
+Autoconf and automake should be installed, as they needed to generate the makefile for the project. Below is the sequence of commands to build and install the restconfdemo executable.  Before doing so, modifications to Makefile.am will likely be necessary to find cURL and Xerces-C++ includes and libraries. restconfdemo_CPPFLAGS may need an entry like  -I/usr/src/xerces-c-3.1.1-x86_64-linux-gcc-3.4/include to locate Xerces' include files and restconfdemo_LDADD an entry like -L/usr/src/xerces-c-3.1.1-x86_64-linux-gcc-3.4/lib to locate the Xerces-C++ shared object libraries.
+
         > aclocal
         > autoconf
         > automake --add-missing
