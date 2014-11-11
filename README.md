@@ -32,13 +32,18 @@ The demo also uses XMS's Javascript API for the web client.
 
 The minimum XMS system version is 2.3. Older versions will not work.
 
-Autoconf and automake are needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:  
-    > aclocal
-    > autoconf
-    > automake --add-missing
-    > ./configure
-    > make
-    > make install
+Two additional libraries must be installed and ready for use before building the demo:
+
+* Xercess-C++ 3.1.1 Follow the installation/Build Instructions at http://xerces.apache.org/xerces-c/ 
+* cURL 7.39.0 Follow the instructions at http://curl.haxx.se/download.html 
+
+Autoconf and automake are also needed to generate the makefile for the project.  This is the sequence of commands to build and install the restconfdemo executable:  
+        > aclocal
+        > autoconf
+        > automake --add-missing
+        > ./configure
+        > make
+        > make install
 
 In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo. These are found in restconfdemo-media.tgz. Install them as follows:
     > cd /var
