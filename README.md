@@ -30,9 +30,9 @@ The demo also uses XMS's Javascript API for the web client.
 
 ## Installing and Building the Demo ##
 
-The minimum XMS system version is 2.3, SU 1. This should be available Novermber 15, 2014. Older versions will not work.
+The minimum XMS system version is 2.3, SU 1. This should be available the week of Novermber 15, 2014. Older versions will not work.
 
-Two additional libraries must be installed and ready for use before building the demo:
+The demo can be built and run on the XMS server, or it can be build on any suitable Linux system. In either case, two additional libraries must be installed and ready for use before building the demo:
 
 * Xercess-C++ 3.1.1 Follow the Installation/Build Instructions at http://xerces.apache.org/xerces-c/ Depending on you platform, there are different ways to install Xerces-C++, so no further instructions will be given here.
 * cURL 7.39.0 Follow the instructions at http://curl.haxx.se/download.html A with Xerces, no further build install instructions will ge given here.
@@ -46,7 +46,7 @@ Autoconf and automake should be installed, as they needed to generate the makefi
         > make
         > make install
 
-In addition to the C++ source code, there are a set of media, html and javascript files that accompany the demo. These are found in restconfdemo-media.tgz. Install them as follows:
+In addition to the C++ source code for the REST application itself, there are a set of media, html and javascript files that accompany the demo. These files must be installed on the XMS server. These are found in restconfdemo-media.tgz. Install them on the XMS server (as root) as follows:
 
     > cd /var
     > tar xvfz <file-location>/restconfdemo.tgz
