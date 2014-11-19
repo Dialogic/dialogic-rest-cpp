@@ -60,7 +60,7 @@ In addition to the C++ source code for the REST application itself, there are a 
 * Use latest Chrome browser. Firefox may work, but is has been far less tested/used.
 * Start the demo executable. Options available are:
  
-    ./cpprestdemo --help
+    ./restconfdemo --help
 
     Command line options:
     -h, --help  Display this information.
