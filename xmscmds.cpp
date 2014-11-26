@@ -78,7 +78,7 @@ answer_call_xml (const char *dtmf_mode)
 {
     // Start with known parameters
     std::string xmlCmd =
-        "<web_service version=\"1.0\"> <call answer=\"yes\" media=\"audiovideo\" info_ack_mode=\"manual\" async_dtmf=\"yes\" async_tone=\"yes\" ";
+        "<web_service version=\"1.0\"> <call answer=\"yes\" async_completion=\"yes\" media=\"audiovideo\" info_ack_mode=\"manual\" async_dtmf=\"yes\" async_tone=\"yes\" ";
 
     // Add possible params
     if (strcmp (dtmf_mode, "sipinfo") == 0)

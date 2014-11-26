@@ -73,7 +73,7 @@ int
 Conference720p::file_exists (const char *filename)
 {
     struct stat buffer;
-    LOGDEBUG ("For file: " << filename << " stat returns " << stat (filename, &buffer) << "\n");
+    LOGDEBUG ("For file: " << filename << " stat returns " << stat (filename, &buffer));
     return (stat (filename, &buffer) == 0);
 }
 
@@ -745,7 +745,6 @@ Conference720p::onEvent (xmsEventParser * eventParser)
     if (eventType == "incoming")
 
     {
-        //rest const char *call_id = xms_param_find (event, XMS_KEY_CALL_ID);
         std::string call_id = eventParser->findValByKey ("call_id");
 
         if (isVeryFirstCall ())
@@ -768,7 +767,13 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         // All calls go into conference
         LOGDEBUG ("Answering call " << call_id);
         answer (call_id, getDtmfMode ());
+    }
+    else if (eventType == "answered")
+    {
+        LOGDEBUG ("Answered event received");
+
         // Call goes into next open conference tile/region
+        std::string call_id = eventParser->findValByKey ("call_id");
         int region = get_next_open_region ();
         char region_string[10];
         sprintf (region_string, "%d", region);
@@ -777,20 +782,23 @@ Conference720p::onEvent (xmsEventParser * eventParser)
 
         LOGDEBUG ("Adding party to conference " << conf_id_ << " in region " << region);
         add_party (call_id, conf_id_, region_string);
-        // JH - error handling
+        // JH - add error handling
         if (0)
         {
             decNumCallers ();
             hangup (call_id);
         }
-        // Turn on this guys caption maybe?
+        // Turn on this guy's caption maybe?
         if (areCaptionsOn ())
             turnOnCaption (region);
     }
-    else if (eventType == "hangup")
-
+    else if (eventType == "accepted")
     {
-        LOGDEBUG ("Hangup event received\n");
+        LOGDEBUG ("Accepted event received. No action taken");
+    }
+    else if (eventType == "hangup")
+    {
+        LOGDEBUG ("Hangup event received");
         decNumCallers ();
         std::string call_id = eventParser->findValByKey ("call_id");
 
@@ -845,14 +853,14 @@ Conference720p::onEvent (xmsEventParser * eventParser)
     }
     else if (eventType == "dtmf")
     {
-        LOGDEBUG ("DTMF event received\n");
+        LOGDEBUG ("DTMF event received");
         // JH - want to go over DTMF use, make saner. Maybe use INFO messages?
         std::string digit = eventParser->findValByKey ("digits");
         if (digit == "1")
         {
             if (strlen (getExclusiveMediaOp ()) == 0)
             {
-                LOGDEBUG ("Recording conference for 60 seconds max\n");
+                LOGDEBUG ("Recording conference for 60 seconds max");
                 // Notify all callers of record in progress
                 notify_all_callers ("720p Conference now being recorded...");
                 // Put a recording icon on the screen
@@ -874,7 +882,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             }
             else
             {
-                LOGDEBUG ("Full screen media operation in progress...\n");
+                LOGDEBUG ("Full screen media operation in progress...");
             }
         }
         else if (digit == "C")
@@ -894,12 +902,12 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                     ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.wav")
                     && file_exists ("/var/lib/xms/media/en-US/restconfdemo/conf_recording.vid"))
                 {
-                    LOGDEBUG ("Playing conference recording into next open region\n");
+                    LOGDEBUG ("Playing conference recording into next open region");
                     int region = get_next_open_region ();
                     char region_string[10];
                     sprintf (region_string, "%d", region);
                     LOGDEBUG ("Adding video to region: " << region);
-                    LOGDEBUG ("Replaying last conference recording\n");
+                    LOGDEBUG ("Replaying last conference recording");
                     std::string media_id = play_into_conf (conf_id_,
                                                            "conf_recording.wav",
                                                            "audio/x-wav",
@@ -912,12 +920,12 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 }
                 else
                 {
-                    LOGDEBUG ("Full screen media operation in progress...\n");
+                    LOGDEBUG ("Full screen media operation in progress...");
                 }
             }
             else
             {
-                LOGWARN ("Please record a conference before trying to replay.\n");
+                LOGWARN ("Please record a conference before trying to replay");
             }
         }
         else if (digit == "3")
@@ -928,7 +936,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
-                    LOGDEBUG ("Replaying last conference recording into full screen\n");
+                    LOGDEBUG ("Replaying last conference recording into full screen");
                     std::string media_id = play_into_conf (conf_id_,
                                                            "conf_recording.wav",
                                                            "audio/x-wav",
@@ -943,12 +951,12 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 }
                 else
                 {
-                    LOGDEBUG ("Full screen media operation in progress...\n");
+                    LOGDEBUG ("Full screen media operation in progress...");
                 }
             }
             else
             {
-                LOGWARN ("Please record a conference before trying to replay.\n");
+                LOGWARN ("Please record a conference before trying to replay");
             }
         }
         else if (digit == "4")
@@ -959,7 +967,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
-                    LOGDEBUG ("Playing Network Fuel video into next open region\n");
+                    LOGDEBUG ("Playing Network Fuel video into next open region");
                     int region = get_next_open_region ();
                     char region_string[10];
                     sprintf (region_string, "%d", region);
@@ -981,7 +989,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 }
                 else
                 {
-                    LOGDEBUG ("Full screen media operation in progress...\n");
+                    LOGDEBUG ("Full screen media operation in progress...");
                 }
             }
             else
@@ -997,7 +1005,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
-                    LOGDEBUG ("Playing Sintel video into next open region\n");
+                    LOGDEBUG ("Playing Sintel video into next open region");
                     int region = get_next_open_region ();
                     char region_string[10];
                     sprintf (region_string, "%d", region);
@@ -1019,7 +1027,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 }
                 else
                 {
-                    LOGDEBUG ("Full screen media operation in progress...\n");
+                    LOGDEBUG ("Full screen media operation in progress...");
                 }
             }
             else
@@ -1037,7 +1045,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 {
                     LOGDEBUG ("Stopping any ongoing region videos");
                     ConfVideoPlays::Instance ()->stopAllConfVideoPlays ();
-                    LOGDEBUG ("Playing Network Fuel into full conference screen\n");
+                    LOGDEBUG ("Playing Network Fuel into full conference screen");
                     std::string media_id = play_into_conf (conf_id_,
                                                            "Dialogic_NetworkFuel.wav",
                                                            "audio/x-wav",
@@ -1048,7 +1056,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
                 }
                 else
                 {
-                    LOGDEBUG ("Full screen media operation in progress...\n");
+                    LOGDEBUG ("Full screen media operation in progress...");
                 }
             }
             else
@@ -1064,7 +1072,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
             {
                 if (strlen (getExclusiveMediaOp ()) == 0)
                 {
-                    LOGDEBUG ("Playing Sintel video into full conference screen\n");
+                    LOGDEBUG ("Playing Sintel video into full conference screen");
                     std::string media_id = play_into_conf (conf_id_,
                                                            "sintel_short_clip.wav",
                                                            "audio/x-wav",
@@ -1190,12 +1198,12 @@ Conference720p::onEvent (xmsEventParser * eventParser)
         }
         else
         {
-            LOGWARN ("Unhandled DTMF entered\n");
+            LOGWARN ("Unhandled DTMF entered");
         }
     }
     else if (eventType == "end_play")
     {
-        LOGDEBUG ("End play event received\n");
+        LOGDEBUG ("End play event received");
         if (ConfVideoPlays::Instance ()->areAnyConfPlaysActive ())
         {
             // Mark region cleared and update play list
@@ -1223,7 +1231,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
     else if (eventType == "end_record")
 
     {
-        LOGDEBUG ("End record event received\n");
+        LOGDEBUG ("End record event received");
         notify_all_callers ("720p Conference recording terminated");
         // Remove recording icon from screen
         std::string deleteMicOn = deleteMicOnOverlay (0);
@@ -1258,7 +1266,7 @@ Conference720p::onEvent (xmsEventParser * eventParser)
     else if (eventType == "info")
 
     {
-        LOGDEBUG ("Info event received\n");
+        LOGDEBUG ("Info event received");
         std::string msg = eventParser->findValByKey ("content");
         std::string infoCallId = eventParser->findValByKey ("call_id");
 
