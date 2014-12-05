@@ -28,8 +28,9 @@ class XmlDomErrorHandler : public HandlerBase
 {
   public:
     void fatalError(const SAXParseException &exc) {
-        printf("Fatal parsing error at line %d\n", (int)exc.getLineNumber());
-        exit(-1);
+        //printf("Fatal parsing error at line %d\n", (int)exc.getLineNumber());
+        //exit(-1);
+        printf("Bad message - parsing error at line %d\n", (int)exc.getLineNumber());
     }
 };
 
