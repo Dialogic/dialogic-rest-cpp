@@ -1,3 +1,10 @@
+![alt tag](https://www.dialogic.com/~/media/shared/graphics/video/nwrkfuel-posterimg.jpg)
+
+Dialogic PowerMedia XMS
+=======================
+Dialogic’s PowerMedia™ XMS is a powerful next-generation software media server that enables standards-based, real-time multimedia communications solutions for mobile and broadband environments. PowerMedia XMS supports standard media control interfaces such as MSML, VXML, NetAnn, and JSR 309, plus a Dialogic HTTP-based version of a RESTful API.
+
+
 dialogic-cplusplus-rest
 =======================
 
@@ -123,3 +130,8 @@ A series of video overlay demos show XMS's overlay capabilities.
 
 When the last conferee hangs up, the conference is destroyed. A new caller will start a new conference, which defaults to 4 regions, no video plays active, no ongoing record, no overlays active.
 
+Useful Links
+=============
+For more information, visit the  PowerMedia XMS VXML and NetAnn Reference Guide found on in the documents section: http://www.dialogic.com/en/products/media-server-software/xms.aspx
+
+For technical questions, visit our forums:http://www.dialogic.com/den/developer_forums/f/default.aspx
